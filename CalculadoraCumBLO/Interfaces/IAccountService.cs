@@ -6,7 +6,7 @@ namespace CalculadoraCumBLO.Interfaces
 {
     public interface IAccountService
     {
-        Result Login(LoginRequest model);
+        (Result, AccountDTO) Login(LoginRequest model);
         Result Create(CreateAccountRequest model);
     }
 }

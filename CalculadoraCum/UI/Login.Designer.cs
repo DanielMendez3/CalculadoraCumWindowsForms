@@ -114,6 +114,7 @@ namespace CalculadoraCum
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 221);
+            this.ControlBox = false;
             this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.SignInButton);

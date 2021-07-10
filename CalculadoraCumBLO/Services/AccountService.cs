@@ -21,26 +21,29 @@ namespace CalculadoraCumBLO.Services
 
         public Result Create(CreateAccountRequest model)
         {
+            //Validaciones
+
             var account = _mapper.Map<Account>(model);
             _accountRepository.Add(account);
             return new Result();
         }
 
-        public Result Login(LoginRequest model)
+        public (Result, AccountDTO) Login(LoginRequest model)
         {
             Result result = new Result();
+
             if (string.IsNullOrEmpty(model.Email))
             {
                 result.Status = StatusCode.Advertencia;
                 result.Message = "El correo electrónico no puede estar vacío.";
-                return result;
+                return (result, null);
             }
 
             if (string.IsNullOrEmpty(model.Password))
             {
                 result.Status = StatusCode.Advertencia;
                 result.Message = "La contraseña no puede estar vacía.";
-                return result;
+                return (result, null);
             }
 
             var account =_accountRepository.Login(model.Email, model.Password);
@@ -48,12 +51,12 @@ namespace CalculadoraCumBLO.Services
             {
                 result.Status = StatusCode.Error;
                 result.Message = "Usuario o contraseña incorrectos.";
-                return result;
+                return (result, null);
             }
 
             var accountDTO = _mapper.Map<AccountDTO>(account);
 
-            return result;
+            return (result, accountDTO);
         }
     }
 }
