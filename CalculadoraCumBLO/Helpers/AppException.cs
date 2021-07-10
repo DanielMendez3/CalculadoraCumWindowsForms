@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CalculadoraCum.Helpers
+namespace CalculadoraCumBLO.Helpers
 {
     public class AppException : Exception
     {

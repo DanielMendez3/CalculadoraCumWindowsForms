@@ -1,4 +1,4 @@
-﻿using CalculadoraCumEntities;
+﻿using CalculadoraCumBLO.DTOS;
 
 namespace CalculadoraCumBLO.Models
 {
