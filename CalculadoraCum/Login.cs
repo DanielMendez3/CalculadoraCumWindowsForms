@@ -1,7 +1,8 @@
-﻿using CalculadoraCumBLO.Interfaces;
+﻿using CalculadoraCumBLO.DTOS;
+using CalculadoraCumBLO.DTOS.AccountModel;
+using CalculadoraCumBLO.Interfaces;
 using CalculadoraCumBLO.Models.AccountModel;
 using CalculadoraCumBLO.Services;
-using CalculadoraCumEntities;
 using System.Windows.Forms;
 
 namespace CalculadoraCum
@@ -26,6 +27,18 @@ namespace CalculadoraCum
                 MessageBox.Show(this, result.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+
+        }
+
+        private void SignUpButton_Click(object sender, System.EventArgs e)
+        {
+            _accountService.Create(new CreateAccountRequest() { Email = "carlos@gmail.com",
+                LastName = "MEDINA",
+                Name = "CARLOS",
+                Password = "12345678",
+                Rol = 2
+            });
         }
     }
 }

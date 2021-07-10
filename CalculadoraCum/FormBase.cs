@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalculadoraCumBLO.DTOS.AccountModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,11 @@ namespace CalculadoraCum
         public FormBase()
         {
             InitializeComponent();
+        }
+
+        public FormBase(AccountDTO account) : base()
+        {
+
         }
     }
 }

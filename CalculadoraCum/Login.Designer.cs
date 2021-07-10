@@ -107,6 +107,7 @@ namespace CalculadoraCum
             this.SignUpButton.TabIndex = 6;
             this.SignUpButton.Text = "Crear Cuenta";
             this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // Login
             // 
